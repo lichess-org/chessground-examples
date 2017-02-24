@@ -1,4 +1,4 @@
-import Chessground  from 'chessground';
+import { Chessground }  from 'chessground';
 import { Unit } from './unit';
 
 export const defaults: Unit = {

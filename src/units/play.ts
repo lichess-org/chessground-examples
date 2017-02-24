@@ -1,5 +1,5 @@
 import { Chess } from 'chess.js';
-import Chessground from 'chessground';
+import { Chessground }  from 'chessground';
 import { Api } from 'chessground/api';
 import { Unit } from './unit';
 import { toColor, toDests } from '../util'

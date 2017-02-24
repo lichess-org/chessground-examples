@@ -2,10 +2,7 @@
   "name": "chessground-examples",
   "version": "1.0.0",
   "description": "chessground examples",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "main": "dist/chessground-examples.js",
   "author": "Thibault Duplessis",
   "license": "GPL-3.0",
   "dependencies": {
