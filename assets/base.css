@@ -88,6 +88,10 @@ piece {
 piece.dragging {
   z-index: 9;
 }
+piece.fading {
+  z-index: 1;
+  opacity: 0.5;
+}
 piece.ghost {
   opacity: 0.3;
 }
