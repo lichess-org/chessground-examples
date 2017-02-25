@@ -9,7 +9,7 @@ export const move: Unit = {
     });
     const delay = 400;
     function run() {
-      if (!cg.state.dom.boardEl.offsetParent) return;
+      if (!cg.state.dom.elements.board.offsetParent) return;
       cg.move('e2', 'a8');
       setTimeout(() => {
         cg.move('a8', 'e2');
@@ -33,7 +33,7 @@ export const select: Unit = {
     });
     const delay = 500;
     function run() {
-      if (!cg.state.dom.boardEl.offsetParent) return;
+      if (!cg.state.dom.elements.board.offsetParent) return;
       cg.selectSquare('e2');
       setTimeout(() => {
         cg.selectSquare('d4');

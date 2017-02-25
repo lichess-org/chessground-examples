@@ -65,6 +65,31 @@ export const vsRandom: Unit = {
   }
 };
 
+export const slowAnim: Unit = {
+  name: 'Play vs random AI; slow animations',
+  run(el) {
+    const chess = new Chess();
+    const cg = Chessground(el, {
+      animation: {
+        duration: 5000
+      },
+      movable: {
+        color: 'white',
+        free: false,
+        dests: toDests(chess)
+      }
+    });
+    cg.set({
+      movable: {
+        events: {
+          after: aiPlay(cg, chess, 1000, false)
+        }
+      }
+    });
+    return cg;
+  }
+};
+
 export const conflictingHold: Unit = {
   name: 'Conflicting hold/premove',
   run(el) {
@@ -80,6 +105,12 @@ export const conflictingHold: Unit = {
     setTimeout(() => {
       cg.move('f6', 'e5');
       cg.playPremove();
+      cg.set({
+        turnColor: 'white',
+        movable: {
+          dests: undefined
+        }
+      });
     }, 1000);
     return cg;
   }
