@@ -32,9 +32,11 @@ export const initial: Unit = {
 export const castling: Unit = {
   name: 'Castling',
   run(el) {
-    const chess = new Chess();
+    const fen = 'rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4';
+    const chess = new Chess(fen);
     const cg = Chessground(el, {
-      fen: 'rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4',
+      fen: fen,
+      turnColor: toColor(chess),
       movable: {
         color: 'white',
         free: false,

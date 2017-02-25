@@ -1,13 +1,13 @@
 {
   "name": "chessground-examples",
-  "version": "1.0.0",
+  "version": "6.0.0",
   "description": "chessground examples",
   "main": "dist/chessground-examples.js",
   "author": "Thibault Duplessis",
   "license": "GPL-3.0",
   "dependencies": {
     "chess.js": "^0.10.2",
-    "chessground": "^5.0.4",
+    "chessground": "^6.0.0",
     "page": "^1.7.1",
     "snabbdom": "^0.6.4"
   },

@@ -21,6 +21,7 @@ export function run(element: Element) {
     const el = vnode.elm as HTMLElement;
     el.innerHTML = '';
     cg = unit.run(el);
+    window.cg = cg;
   }
 
   function render() {

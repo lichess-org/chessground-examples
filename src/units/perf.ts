@@ -7,13 +7,12 @@ export const move: Unit = {
     const cg = Chessground(cont, {
       animation: { duration: 500 }
     });
-    const el = cont.querySelector('.cg-board') as HTMLElement;
     const delay = 400;
     function run() {
-      if (!el.offsetParent) return;
-      cg.move('e2', 'd4');
+      if (!cg.state.dom.boardEl.offsetParent) return;
+      cg.move('e2', 'a8');
       setTimeout(() => {
-        cg.move('d4', 'e2');
+        cg.move('a8', 'e2');
         setTimeout(run, delay);
       }, delay);
     }
@@ -32,10 +31,9 @@ export const select: Unit = {
         }
       }
     });
-    const el = cont.querySelector('.cg-board') as HTMLElement;
     const delay = 500;
     function run() {
-      if (!el.offsetParent) return;
+      if (!cg.state.dom.boardEl.offsetParent) return;
       cg.selectSquare('e2');
       setTimeout(() => {
         cg.selectSquare('d4');

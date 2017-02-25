@@ -38,13 +38,6 @@
   width: 100%;
   height: 100%;
 }
-.cg-board:not(.is3d) {
-  image-rendering: -moz-crisp-edges;
-  image-rendering: -o-crisp-edges;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: pixelated;
-  -ms-interpolation-mode: nearest-neighbor;
-}
 square {
   position: absolute;
   top: 0;
@@ -58,6 +51,12 @@ square.move-dest {
 square.premove-dest {
   background: radial-gradient(rgba(20, 30, 85, 0.5) 22%, #203085 0, rgba(0, 0, 0, 0.3) 0, rgba(0, 0, 0, 0) 0);
 }
+square.oc.move-dest {
+  background: radial-gradient(transparent 0%, transparent 80%, rgba(20, 85, 0, 0.3) 80%);
+}
+square.oc.premove-dest {
+  background: radial-gradient(transparent 0%, transparent 80%, rgba(20, 30, 85, 0.2) 80%);
+}
 square.last-move {
   background-color: rgba(155, 199, 0, 0.41);
 }
@@ -69,6 +68,12 @@ square.check {
 }
 square.current-premove {
   background-color: rgba(20, 30, 85, 0.5);
+}
+div.over {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(20, 85, 30, 0.3);
 }
 piece {
   position: absolute;
