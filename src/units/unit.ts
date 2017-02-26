@@ -16,5 +16,5 @@ export const list: Unit[] = [
   play.initial, play.castling, play.vsRandom, play.slowAnim, play.conflictingHold,
   perf.move, perf.select,
   anim.conflictingAnim,
-  svg.presetUserShapes, svg.changingShapesHigh, svg.changingShapesLow
+  svg.presetUserShapes, svg.changingShapesHigh, svg.changingShapesLow, svg.brushModifiers
 ];

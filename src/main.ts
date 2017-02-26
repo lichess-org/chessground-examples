@@ -34,7 +34,7 @@ export function run(element: Element) {
         }, ex.name);
       })),
       h('section', [
-        h('div.chessground.wood.small.merida.coordinates', {
+        h('div.chessground.blue.merida', {
           hook: {
             insert: runUnit,
             postpatch: runUnit

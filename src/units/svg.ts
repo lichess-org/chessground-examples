@@ -44,13 +44,20 @@ export const changingShapesLow: Unit = {
 export const brushModifiers: Unit = {
   name: 'Brush modifiers',
   run(el) {
-    const cg = Chessground(el, { drawable: { shapes: shapeSet1 } });
+    function sets() {
+      return [shapeSet1, shapeSet1b, shapeSet1c].map(set => set.map(shape => {
+        shape.modifiers = Math.round(Math.random()) ? undefined : {
+          lineWidth: 2 + Math.round(Math.random() * 3) * 4
+        };
+        return shape;
+      }));
+    };
+    const cg = Chessground(el, { drawable: { shapes: sets()[0] } });
     const delay = 1000;
-    const sets = [shapeSet1, shapeSet1b, shapeSet1c];
     let i = 0;
     function run() {
       if (!cg.state.dom.elements.board.offsetParent) return;
-      cg.setShapes(sets[++i % sets.length]);
+      cg.setShapes(sets()[++i % sets().length]);
       setTimeout(run, delay);
     }
     setTimeout(run, delay);
