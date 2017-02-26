@@ -46,6 +46,7 @@ export const fullRandom: Unit = {
   run(cont) {
     const el = wrapped(cont);
     const chess = new Chess();
+    const delay = 300;
     const cg = Chessground(el, {
       orientation: 'black',
       addPieceZIndex: true,
@@ -60,9 +61,9 @@ export const fullRandom: Unit = {
       const move = moves[Math.floor(Math.random() * moves.length)];
       chess.move(move.san);
       cg.move(move.from, move.to);
-      setTimeout(makeMove, 1000);
+      setTimeout(makeMove, delay);
     }
-    setTimeout(makeMove, 1000);
+    setTimeout(makeMove, delay);
     return cg;
   }
 }
