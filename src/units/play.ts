@@ -1,8 +1,7 @@
 import { Chess } from 'chess.js';
 import { Chessground }  from 'chessground';
-import { Api } from 'chessground/api';
 import { Unit } from './unit';
-import { toColor, toDests } from '../util'
+import { toColor, toDests, aiPlay, playOtherSide } from '../util'
 
 export const initial: Unit = {
   name: 'Play legal moves from initial position',
@@ -65,6 +64,28 @@ export const vsRandom: Unit = {
   }
 };
 
+export const fullRandom: Unit = {
+  name: 'Watch 2 random AIs',
+  run(el) {
+    const chess = new Chess();
+    const cg = Chessground(el, {
+      movable: {
+        free: false
+      }
+    });
+    function makeMove() {
+      if (!cg.state.dom.elements.board.offsetParent) return;
+      const moves = chess.moves({verbose:true});
+      const move = moves[Math.floor(Math.random() * moves.length)];
+      chess.move(move.san);
+      cg.move(move.from, move.to);
+      setTimeout(makeMove, 1000);
+    }
+    setTimeout(makeMove, 1000);
+    return cg;
+  }
+}
+
 export const slowAnim: Unit = {
   name: 'Play vs random AI; slow animations',
   run(el) {
@@ -115,36 +136,3 @@ export const conflictingHold: Unit = {
     return cg;
   }
 };
-
-function playOtherSide(cg: Api, chess) {
-  return (orig, dest) => {
-    chess.move({from: orig, to: dest});
-    cg.set({
-      turnColor: toColor(chess),
-      movable: {
-        color: toColor(chess),
-        dests: toDests(chess)
-      }
-    });
-  };
-}
-
-function aiPlay(cg: Api, chess, delay: number, firstMove: boolean) {
-  return (orig, dest) => {
-    chess.move({from: orig, to: dest});
-    setTimeout(() => {
-      const moves = chess.moves({verbose:true});
-      const move = firstMove ? moves[0] : moves[Math.floor(Math.random() * moves.length)];
-      chess.move(move.san);
-      cg.move(move.from, move.to);
-      cg.set({
-        turnColor: toColor(chess),
-        movable: {
-          color: toColor(chess),
-          dests: toDests(chess)
-        }
-      });
-      cg.playPremove();
-    }, delay);
-  };
-}

@@ -19,6 +19,7 @@ export function run(element: Element) {
 
   function runUnit(vnode: VNode) {
     const el = vnode.elm as HTMLElement;
+    el.innerHTML = '';
     cg = unit.run(el);
     window['cg'] = cg; // for messing up with it from the browser console
   }
