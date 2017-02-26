@@ -15,7 +15,7 @@
 }
  .cg-board-wrap svg {
   overflow: hidden;
-  position: relative;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -24,19 +24,18 @@
   z-index: 2;
   opacity: 0.6;
 }
-.cg-board-wrap svg * {
-  transition: 0.3s;
-}
 .cg-board {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   line-height: 0;
   background-size: cover;
-  position: relative;
-  width: 100%;
-  height: 100%;
 }
 square {
   position: absolute;
