@@ -7,7 +7,9 @@ export const defaults: Unit = {
   name: '3D theme',
   run(cont) {
     const el = wrapped(cont);
-    const cg = Chessground(el);
+    const cg = Chessground(el, {
+      addPieceZIndex: true,
+    });
     cg.redrawAll();
     return cg;
   }
@@ -19,6 +21,8 @@ export const vsRandom: Unit = {
     const el = wrapped(cont);
     const chess = new Chess();
     const cg = Chessground(el, {
+      orientation: 'black',
+      addPieceZIndex: true,
       movable: {
         color: 'white',
         free: false,
@@ -43,6 +47,8 @@ export const fullRandom: Unit = {
     const el = wrapped(cont);
     const chess = new Chess();
     const cg = Chessground(el, {
+      orientation: 'black',
+      addPieceZIndex: true,
       movable: {
         free: false
       }
