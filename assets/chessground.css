@@ -64,7 +64,7 @@
 .cg-board square.current-premove {
   background-color: rgba(20, 30, 85, 0.5);
 }
-piece {
+.cg-board piece {
   position: absolute;
   top: 0;
   left: 0;
@@ -76,11 +76,9 @@ piece {
 }
 .cg-board piece.dragging {
   cursor: move;
-}
-piece.dragging {
   z-index: 9;
 }
-piece.fading {
+.cg-board piece.fading {
   z-index: 1;
   opacity: 0.5;
 }
@@ -120,9 +118,6 @@ piece.fading {
   flex-flow: column-reverse;
   height: 100%;
   width: 12px;
-}
-.is3d .cg-board-wrap coords.ranks {
-  height: calc(100% - 10px);
 }
 .cg-board-wrap coords.ranks.black {
   flex-flow: column;

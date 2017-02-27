@@ -36,6 +36,10 @@
   left: -1.85%;
   top: -9.1%;
 }
+.cg-board piece.dragging {
+  cursor: move;
+  z-index: 70!important;
+}
 .in3d .cg-board-wrap piece.pawn.white {
   background-image: url('images/pieces/staunton/basic/White-Pawn.png');
 }
