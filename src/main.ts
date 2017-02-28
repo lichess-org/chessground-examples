@@ -18,9 +18,7 @@ export function run(element: Element) {
   }
 
   function runUnit(vnode: VNode) {
-    const el = vnode.elm as HTMLElement;
-    el.innerHTML = '';
-    cg = unit.run(el);
+    cg = unit.run(vnode.elm as HTMLElement);
     window['cg'] = cg; // for messing up with it from the browser console
   }
 
@@ -34,8 +32,8 @@ export function run(element: Element) {
           on: { click: () => page(`/${id}`) }
         }, ex.name);
       })),
-      h('section', [
-        h('div.chessground.blue.merida', {
+      h('section.blue.merida', [
+        h('div.cg-board-wrap', {
           hook: {
             insert: runUnit,
             postpatch: runUnit
