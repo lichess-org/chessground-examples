@@ -6,6 +6,7 @@ import * as perf from './perf'
 import * as anim from './anim'
 import * as svg from './svg'
 import * as in3d from './in3d'
+import * as fen from './fen'
 
 export interface Unit {
   name: string;
@@ -18,5 +19,6 @@ export const list: Unit[] = [
   perf.move, perf.select,
   anim.conflictingAnim,
   svg.presetUserShapes, svg.changingShapesHigh, svg.changingShapesLow, svg.brushModifiers,
-  in3d.defaults, in3d.vsRandom, in3d.fullRandom
+  in3d.defaults, in3d.vsRandom, in3d.fullRandom,
+  fen.autoSwitch
 ];

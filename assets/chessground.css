@@ -78,9 +78,11 @@
   cursor: move;
   z-index: 9;
 }
+.cg-board piece.anim {
+  z-index: 8;
+}
 .cg-board piece.fading {
   z-index: 1;
-  opacity: 0.5;
 }
 .cg-board-wrap div.over {
   position: absolute;
