@@ -6,7 +6,7 @@ export const conflictingAnim: Unit = {
   run(el) {
     const cg = Chessground(el, {
       animation: {
-        duration: 15000
+        duration: 500
       },
       fen: '8/8/5p2/4P3/4K3/8/8/8',
       turnColor: 'black',
@@ -17,14 +17,14 @@ export const conflictingAnim: Unit = {
     });
     setTimeout(() => {
       cg.move('f6', 'e5');
-      cg.playPremove();
       cg.set({
         turnColor: 'white',
         movable: {
-          dests: {e4: ['e5']}
+          dests: {e4: ['e5', 'd5', 'f5']}
         }
       });
-    }, 1000);
+      cg.playPremove();
+    }, 3000);
     return cg;
   }
 };

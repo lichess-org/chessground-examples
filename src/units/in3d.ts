@@ -70,8 +70,8 @@ export const fullRandom: Unit = {
 
 function wrapped(cont: HTMLElement) {
   const el = document.createElement('div');
-  el.classList.add('in3d');
-  el.classList.add('staunton');
+  cont.className = 'in3d staunton';
+  cont.innerHTML = '';
   cont.appendChild(el);
   return el;
 }

@@ -49,6 +49,7 @@
   box-shadow: inset 0 0 10px 2px rgba(216, 85, 0, 0.9);
 }
 .cg-board square.last-move {
+  will-change: transform;
   background-color: rgba(155, 199, 0, 0.41);
 }
 .cg-board square.selected {

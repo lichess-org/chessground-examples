@@ -18,7 +18,9 @@ export function run(element: Element) {
   }
 
   function runUnit(vnode: VNode) {
-    cg = unit.run(vnode.elm as HTMLElement);
+    const el = vnode.elm as HTMLElement;
+    el.className = 'cg-board-wrap';
+    cg = unit.run(el);
     window['cg'] = cg; // for messing up with it from the browser console
   }
 

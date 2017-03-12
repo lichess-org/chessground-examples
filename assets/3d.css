@@ -11,11 +11,6 @@
   display: none;
 }
 .in3d .cg-board-wrap {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
   background-size: cover;
   background-image: url('images/board/3d/woodi.1024.png');
 }
