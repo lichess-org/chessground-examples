@@ -2,7 +2,7 @@ import { Chessground }  from 'chessground';
 import { Unit } from './unit';
 
 export const conflictingAnim: Unit = {
-  name: 'Conflicting animation',
+  name: 'Animation: conflict',
   run(el) {
     const cg = Chessground(el, {
       animation: {
@@ -25,6 +25,26 @@ export const conflictingAnim: Unit = {
       });
       cg.playPremove();
     }, 3000);
+    return cg;
+  }
+};
+
+export const withSameRole: Unit = {
+  name: 'Animation: same role',
+  run(el) {
+    const cg = Chessground(el, {
+      animation: {
+        duration: 10000
+      },
+      fen: '2k5/8/4p3/5p2/4P1P1/8/8/2K5',
+      turnColor: 'white',
+    });
+    setTimeout(() => {
+      cg.move('e4', 'f5');
+      setTimeout(() => {
+        cg.move('e6', 'f5');
+      }, 200);
+    }, 200);
     return cg;
   }
 };

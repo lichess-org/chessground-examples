@@ -65,6 +65,30 @@ export const brushModifiers: Unit = {
   }
 };
 
+export const autoShapes: Unit = {
+  name: 'Autoshapes',
+  run(el) {
+    function sets() {
+      return [shapeSet1, shapeSet1b, shapeSet1c].map(set => set.map(shape => {
+        shape.modifiers = Math.round(Math.random()) ? undefined : {
+          lineWidth: 2 + Math.round(Math.random() * 3) * 4
+        };
+        return shape;
+      }));
+    };
+    const cg = Chessground(el);
+    const delay = 1000;
+    let i = 0;
+    function run() {
+      if (!cg.state.dom.elements.board.offsetParent) return;
+      cg.setAutoShapes(sets()[++i % sets().length]);
+      setTimeout(run, delay);
+    }
+    setTimeout(run, delay);
+    return cg;
+  }
+};
+
 const shapeSet1: DrawShape[] = [
   { orig: 'a3', brush: 'green' },
   { orig: 'a4', brush: 'blue' },
