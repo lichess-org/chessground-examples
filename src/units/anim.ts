@@ -34,18 +34,43 @@ export const withSameRole: Unit = {
   run(el) {
     const cg = Chessground(el, {
       animation: {
-        duration: 10000
+        duration: 2000
       },
-      fen: '2k5/8/4p3/5p2/4P1P1/8/8/2K5',
+      highlight: {
+        lastMove: false
+      },
+      fen: '8/8/4p3/5p2/4B3/8/8/8',
       turnColor: 'white',
     });
     setTimeout(() => {
       cg.move('e4', 'f5');
       setTimeout(() => {
         cg.move('e6', 'f5');
-      }, 200);
+      }, 500);
     }, 200);
     return cg;
   }
 };
 
+export const notSameRole: Unit = {
+  name: 'Animation: different role',
+  run(el) {
+    const cg = Chessground(el, {
+      animation: {
+        duration: 2000
+      },
+      highlight: {
+        lastMove: false
+      },
+      fen: '8/8/4n3/5p2/4P3/8/8/8',
+      turnColor: 'white',
+    });
+    setTimeout(() => {
+      cg.move('e4', 'f5');
+      setTimeout(() => {
+        cg.move('e6', 'f5');
+      }, 500);
+    }, 200);
+    return cg;
+  }
+};

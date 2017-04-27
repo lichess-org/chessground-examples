@@ -14,10 +14,10 @@ export interface Unit {
 }
 
 export const list: Unit[] = [
-  basics.defaults, basics.fromFen,
+  basics.defaults, basics.fromFen, basics.lastMoveCrazyhouse,
   play.initial, play.castling, play.vsRandom, play.fullRandom, play.slowAnim, play.conflictingHold,
   perf.move, perf.select,
-  anim.conflictingAnim, anim.withSameRole,
+  anim.conflictingAnim, anim.withSameRole, anim.notSameRole,
   svg.presetUserShapes, svg.changingShapesHigh, svg.changingShapesLow, svg.brushModifiers, svg.autoShapes,
   in3d.defaults, in3d.vsRandom, in3d.fullRandom,
   fen.autoSwitch

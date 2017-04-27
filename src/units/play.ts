@@ -69,6 +69,9 @@ export const fullRandom: Unit = {
   run(el) {
     const chess = new Chess();
     const cg = Chessground(el, {
+      animation: {
+        duration: 1000
+      },
       movable: {
         free: false
       }
@@ -79,9 +82,9 @@ export const fullRandom: Unit = {
       const move = moves[Math.floor(Math.random() * moves.length)];
       chess.move(move.san);
       cg.move(move.from, move.to);
-      setTimeout(makeMove, 1000);
+      setTimeout(makeMove, 700);
     }
-    setTimeout(makeMove, 1000);
+    setTimeout(makeMove, 700);
     return cg;
   }
 }
