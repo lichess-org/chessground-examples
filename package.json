@@ -7,7 +7,7 @@
   "license": "GPL-3.0",
   "dependencies": {
     "chess.js": "^0.10",
-    "chessground": "^6.4",
+    "chessground": "^6.5",
     "page": "^1.7",
     "snabbdom": "^0.6"
   },

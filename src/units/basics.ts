@@ -24,7 +24,8 @@ export const lastMoveCrazyhouse: Unit = {
     const cg = Chessground(el);
     setTimeout(() => {
       cg.set({lastMove:['e2', 'e4']});
-      setTimeout(() => cg.set({lastMove:['g6']}), 200);
+      setTimeout(() => cg.set({lastMove:['g6']}), 1000);
+      setTimeout(() => cg.set({lastMove:['e1']}), 2000);
     });
     return cg;
   }

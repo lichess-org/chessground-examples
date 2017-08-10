@@ -24,7 +24,7 @@ export const conflictingAnim: Unit = {
         }
       });
       cg.playPremove();
-    }, 3000);
+    }, 2000);
     return cg;
   }
 };
@@ -71,6 +71,35 @@ export const notSameRole: Unit = {
         cg.move('e6', 'f5');
       }, 500);
     }, 200);
+    return cg;
+  }
+};
+
+export const whileHolding: Unit = {
+  name: 'Animation: while holding',
+  run(el) {
+    const cg = Chessground(el, {
+      fen: '8/8/5p2/4P3/4K3/8/8/8',
+      turnColor: 'black',
+      animation: {
+        duration: 5000
+      },
+      movable: {
+        color: 'white',
+        free: false,
+        showDests: false
+      }
+    });
+    setTimeout(() => {
+      cg.move('f6', 'e5');
+      cg.set({
+        turnColor: 'white',
+        movable: {
+          dests: {e4: ['e5', 'd5', 'f5']}
+        }
+      });
+      cg.playPremove();
+    }, 3000);
     return cg;
   }
 };
