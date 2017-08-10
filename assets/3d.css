@@ -1,22 +1,20 @@
-.in3d {
+.in3d .cg-board-wrap {
+  width: 512px;
+  height: 464.5px;
+}
+.in3d .cg-board::before {
+  position: absolute;
+  top: -0.730688%;
+  left: 0;
   width: 100%;
-  height: 93.5714%;
-  /* height: 73.5714%; */
-  /* padding-bottom: 6.4285703125%; */
-  /* padding-bottom: 36.4285703125%; */
-  position: relative;
+  height: 103.2%;
+  content: '';
+  background-size: cover;
+  background-image: url('images/board/3d/woodi.1024.png');
 }
 .in3d .ghost,
 .in3d .over {
   display: none;
-}
-.in3d .cg-board-wrap {
-  background-size: cover;
-  background-image: url('images/board/3d/woodi.1024.png');
-}
-.in3d .cg-board {
-  top: 0.6168702%;
-  height: 97.0229%;
 }
 .in3d square[data-coord-x]::after {
   bottom: calc(-10px - 22%);
