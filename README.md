@@ -1,7 +1,7 @@
 Usage examples for [lichess' chessground](https://github.com/ornicar/chessground).
 
 ```
-npm i
+yarn install
 gulp dev
 http-server (or any other local http server of your choice)
 ```
