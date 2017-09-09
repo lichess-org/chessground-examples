@@ -21,7 +21,7 @@ export const list: Unit[] = [
   perf.move, perf.select,
   anim.conflictingAnim, anim.withSameRole, anim.notSameRole, anim.whileHolding,
   zh.lastMoveDrop,
-  svg.presetUserShapes, svg.changingShapesHigh, svg.changingShapesLow, svg.brushModifiers, svg.autoShapes,
+  svg.presetUserShapes, svg.changingShapesHigh, svg.changingShapesLow, svg.brushModifiers, svg.autoShapes, svg.visibleFalse, svg.enabledFalse,
   in3d.defaults, in3d.vsRandom, in3d.fullRandom,
   fen.autoSwitch,
   viewOnly.fullRandom

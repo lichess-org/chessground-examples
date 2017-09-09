@@ -89,6 +89,26 @@ export const autoShapes: Unit = {
   }
 };
 
+export const visibleFalse: Unit = {
+  name: 'Shapes not visible',
+  run: el => Chessground(el, { 
+    drawable: { 
+      visible: false,
+      shapes: shapeSet1
+    } 
+  })
+};
+
+export const enabledFalse: Unit = {
+  name: 'Shapes not enabled, but visible',
+  run: el => Chessground(el, { 
+    drawable: { 
+      enabled: false,
+      shapes: shapeSet1
+    } 
+  })
+};
+
 const shapeSet1: DrawShape[] = [
   { orig: 'a3', brush: 'green' },
   { orig: 'a4', brush: 'blue' },
