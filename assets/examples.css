@@ -38,3 +38,11 @@ body {
 #chessground-examples control {
   margin-left: 20px;
 }
+#chessground-examples control .zoom {
+  margin-top: 1em;
+  display: block;
+}
+#chessground-examples control .zoom input {
+  margin-left: 1em;
+  width: 4em;
+}

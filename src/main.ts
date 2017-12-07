@@ -24,6 +24,16 @@ export function run(element: Element) {
     window['cg'] = cg; // for messing up with it from the browser console
   }
 
+  function setZoom(zoom: number) {
+    const el = document.querySelector('.cg-board-wrap') as HTMLElement;
+    if (el) {
+      const px = `${zoom / 100 * 320}px`;
+      el.style.width = px;
+      el.style.height = px;
+      document.body.dispatchEvent(new Event('chessground.resize'));
+    }
+  }
+
   function render() {
     return h('div#chessground-examples', [
       h('menu', list.map((ex, id) => {
@@ -44,7 +54,21 @@ export function run(element: Element) {
         h('p', unit.name)
       ]),
       h('control', [
-        h('button', { on: { click() { cg.toggleOrientation(); }}}, 'Toggle orientation')
+        h('button', { on: { click() { cg.toggleOrientation(); }}}, 'Toggle orientation'),
+        h('label.zoom', [
+          'Zoom',
+          h('input', {
+            attrs: {
+              type: 'number',
+              value: 100
+            },
+            on: {
+              change(e) {
+                setZoom(parseFloat((e.target as HTMLInputElement).value));
+              }
+            }
+          }, 'Toggle orientation')
+        ])
       ])
     ]);
   }
