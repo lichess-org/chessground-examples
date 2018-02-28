@@ -61,7 +61,7 @@
 .cg-board square.current-premove {
   background-color: rgba(20, 30, 85, 0.5);
 }
-.cg-board piece {
+.cg-board-wrap piece {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,6 +70,7 @@
   background-size: cover;
   z-index: 2;
   will-change: transform;
+  pointer-events: none;
 }
 .cg-board piece.dragging {
   cursor: move;
@@ -82,10 +83,7 @@
   z-index: 1;
   opacity: 0.5;
 }
-.cg-board-wrap div.over {
-  position: absolute;
-  top: 0;
-  left: 0;
+.cg-board-wrap square.move-dest:hover {
   background-color: rgba(20, 85, 30, 0.3);
 }
 .cg-board-wrap piece.ghost {
