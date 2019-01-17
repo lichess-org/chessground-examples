@@ -1,6 +1,6 @@
 {
   "name": "chessground-examples",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "chessground examples",
   "main": "dist/chessground-examples.js",
   "author": "Thibault Duplessis",
@@ -12,15 +12,14 @@
     "snabbdom": "^0.6"
   },
   "devDependencies": {
-    "browserify": "^14",
-    "gulp": "^3",
+    "browserify": "^16",
+    "gulp": "^4",
     "gulp-sourcemaps": "^2",
-    "gulp-typescript": "^3",
-    "gulp-util": "^3",
+    "gulp-uglify": "^3",
     "tsify": "^3",
-    "typescript": "^2",
+    "typescript": "^3",
     "vinyl-buffer": "^1",
-    "vinyl-source-stream": "^1",
+    "vinyl-source-stream": "^2",
     "watchify": "^3"
   }
 }

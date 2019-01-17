@@ -11,7 +11,10 @@ export const initial: Unit = {
       movable: {
         color: 'white',
         free: false,
-        dests: toDests(chess)
+        dests: toDests(chess),
+      },
+      draggable: {
+        showGhost: true
       }
     });
     cg.set({
