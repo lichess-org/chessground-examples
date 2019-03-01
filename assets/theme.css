@@ -2,7 +2,7 @@
  * Board
  */
 .blue .cg-board-wrap {
-  background-image: url(images/board/blue.svg);
+  background-image: url('images/board/blue.svg');
 }
 
 .merida .cg-board-wrap piece.pawn.white {
