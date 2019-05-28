@@ -19,13 +19,13 @@ export function run(element: Element) {
 
   function runUnit(vnode: VNode) {
     const el = vnode.elm as HTMLElement;
-    el.className = 'cg-board-wrap';
+    el.className = 'cg-wrap';
     cg = unit.run(el);
     window['cg'] = cg; // for messing up with it from the browser console
   }
 
   function setZoom(zoom: number) {
-    const el = document.querySelector('.cg-board-wrap') as HTMLElement;
+    const el = document.querySelector('.cg-wrap') as HTMLElement;
     if (el) {
       const px = `${zoom / 100 * 320}px`;
       el.style.width = px;
@@ -45,7 +45,7 @@ export function run(element: Element) {
         }, ex.name);
       })),
       h('section.blue.merida', [
-        h('div.cg-board-wrap', {
+        h('div.cg-wrap', {
           hook: {
             insert: runUnit,
             postpatch: runUnit

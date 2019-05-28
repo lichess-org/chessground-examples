@@ -7,9 +7,9 @@
   "license": "GPL-3.0",
   "dependencies": {
     "chess.js": "^0.10",
-    "chessground": "^7.3",
+    "chessground": "^7.6",
     "page": "^1.7",
-    "snabbdom": "^0.6"
+    "snabbdom": "^0.7"
   },
   "devDependencies": {
     "browserify": "^16",

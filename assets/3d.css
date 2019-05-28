@@ -1,4 +1,4 @@
-.in3d .cg-board-wrap {
+.in3d .cg-wrap {
   width: 512px;
   height: 464.5px;
 }
@@ -33,51 +33,51 @@
   cursor: move;
   z-index: 70!important;
 }
-.in3d .cg-board-wrap piece.pawn.white {
+.in3d .cg-wrap piece.pawn.white {
   background-image: url('images/pieces/staunton/basic/White-Pawn.png');
 }
-.in3d .cg-board-wrap piece.bishop.white {
+.in3d .cg-wrap piece.bishop.white {
   background-image: url('images/pieces/staunton/basic/White-Bishop.png');
 }
-.in3d .cg-board-wrap.orientation-black div.bishop.white {
+.in3d .cg-wrap.orientation-black div.bishop.white {
   background-image: url('images/pieces/staunton/basic/White-Bishop-Flipped.png');
 }
-.in3d .cg-board-wrap piece.knight.white {
+.in3d .cg-wrap piece.knight.white {
   background-image: url('images/pieces/staunton/basic/White-Knight.png');
 }
-.in3d .cg-board-wrap.orientation-black div.knight.white {
+.in3d .cg-wrap.orientation-black div.knight.white {
   background-image: url('images/pieces/staunton/basic/White-Knight-Flipped.png');
 }
-.in3d .cg-board-wrap piece.rook.white {
+.in3d .cg-wrap piece.rook.white {
   background-image: url('images/pieces/staunton/basic/White-Rook.png');
 }
-.in3d .cg-board-wrap piece.queen.white {
+.in3d .cg-wrap piece.queen.white {
   background-image: url('images/pieces/staunton/basic/White-Queen.png');
 }
-.in3d .cg-board-wrap piece.king.white {
+.in3d .cg-wrap piece.king.white {
   background-image: url('images/pieces/staunton/basic/White-King.png');
 }
-.in3d .cg-board-wrap piece.pawn.black {
+.in3d .cg-wrap piece.pawn.black {
   background-image: url('images/pieces/staunton/basic/Black-Pawn.png');
 }
-.in3d .cg-board-wrap piece.bishop.black {
+.in3d .cg-wrap piece.bishop.black {
   background-image: url('images/pieces/staunton/basic/Black-Bishop.png');
 }
-.in3d .cg-board-wrap.orientation-white div.bishop.black {
+.in3d .cg-wrap.orientation-white div.bishop.black {
   background-image: url('images/pieces/staunton/basic/Black-Bishop-Flipped.png');
 }
-.in3d .cg-board-wrap piece.knight.black {
+.in3d .cg-wrap piece.knight.black {
   background-image: url('images/pieces/staunton/basic/Black-Knight.png');
 }
-.in3d .cg-board-wrap.orientation-white div.knight.black {
+.in3d .cg-wrap.orientation-white div.knight.black {
   background-image: url('images/pieces/staunton/basic/Black-Knight-Flipped.png');
 }
-.in3d .cg-board-wrap piece.rook.black {
+.in3d .cg-wrap piece.rook.black {
   background-image: url('images/pieces/staunton/basic/Black-Rook.png');
 }
-.in3d .cg-board-wrap piece.queen.black {
+.in3d .cg-wrap piece.queen.black {
   background-image: url('images/pieces/staunton/basic/Black-Queen.png');
 }
-.in3d .cg-board-wrap piece.king.black {
+.in3d .cg-wrap piece.king.black {
   background-image: url('images/pieces/staunton/basic/Black-King.png');
 }
