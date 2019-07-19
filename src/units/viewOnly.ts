@@ -13,6 +13,9 @@ export const fullRandom: Unit = {
       },
       movable: {
         free: false
+      },
+      drawable: {
+        visible: false
       }
     });
     function makeMove() {

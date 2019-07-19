@@ -12,6 +12,6 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedParameters": true,
-    "target": "es5"
+    "target": "es6"
   }
 }
