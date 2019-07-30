@@ -12,6 +12,7 @@
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noUnusedParameters": true,
-    "target": "es6"
+    "target": "ES6",
+    "lib": ["DOM", "ES6"]
   }
 }

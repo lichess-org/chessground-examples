@@ -5,7 +5,7 @@ const colors = require('ansi-colors');
 const logger = require('fancy-log');
 const watchify = require('watchify');
 const browserify = require('browserify');
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 const tsify = require('tsify');
 
 const destination = gulp.dest('./dist');
@@ -22,7 +22,7 @@ const prod = () => browserify(browserifyOpts(false))
   .bundle()
   .pipe(source(`${fileBaseName}.min.js`))
   .pipe(buffer())
-  .pipe(uglify())
+  .pipe(terser({safari10: true}))
   .pipe(destination);
 
 const dev = () => browserify(browserifyOpts(true))

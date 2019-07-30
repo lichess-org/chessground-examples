@@ -15,7 +15,7 @@
     "browserify": "^16",
     "gulp": "^4",
     "gulp-sourcemaps": "^2",
-    "gulp-uglify": "^3",
+    "gulp-terser": "^1",
     "tsify": "^3",
     "typescript": "^3",
     "vinyl-buffer": "^1",
