@@ -539,9 +539,9 @@ chess.js@^0.10:
   integrity sha1-6s76IGcVX4fwRugMwS0gGe7xuBo=
 
 chessground@^7.6:
-  version "7.6.8"
-  resolved "https://registry.yarnpkg.com/chessground/-/chessground-7.6.8.tgz#e971cf77375530d17a764e54aa3c393c647ca9d9"
-  integrity sha512-8Yj9e7qnmunRguPWLeTyPLJJb6mcAyb1JihacqT3aMDTQbKMyBr2w93VAakvlJGDRB1pJsliR7bBl2FfUl08mw==
+  version "7.6.9"
+  resolved "https://registry.yarnpkg.com/chessground/-/chessground-7.6.9.tgz#517b9d488bf8e2d0f6f1b8eb821e7a3fb89e4b38"
+  integrity sha512-x+XFjbZ8STPL4gQch8o2MN+QOPX3bwGmcXjSXpiho1p+qTQZxeEtREkXkToxGTXwcNbumRRlFjcdPpbCSah0EA==
 
 chokidar@^2.0.0, chokidar@^2.1.1:
   version "2.1.6"
