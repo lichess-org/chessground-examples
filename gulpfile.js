@@ -8,8 +8,7 @@ const browserify = require('browserify');
 const terser = require('gulp-terser');
 const tsify = require('tsify');
 
-const destination = gulp.dest('./dist');
-const fileBaseName = 'chessground-examples';
+const destination = () => gulp.dest('./dist');
 
 const browserifyOpts = (debug) => ({
   entries: ['src/main.ts'],
@@ -20,24 +19,24 @@ const browserifyOpts = (debug) => ({
 const prod = () => browserify(browserifyOpts(false))
   .plugin(tsify)
   .bundle()
-  .pipe(source(`${fileBaseName}.min.js`))
+  .pipe(source('chessground-examples.min.js'))
   .pipe(buffer())
   .pipe(terser({safari10: true}))
-  .pipe(destination);
+  .pipe(destination());
 
 const dev = () => browserify(browserifyOpts(true))
   .plugin(tsify)
   .bundle()
-  .pipe(source(`${fileBaseName}.js`))
-  .pipe(destination);
+  .pipe(source('chessground-examples.js'))
+  .pipe(destination());
 
 const watch = () => {
 
   const bundle = () => bundler
     .bundle()
     .on('error', error => logger.error(colors.red(error.message)))
-    .pipe(source(`${fileBaseName}.js`))
-    .pipe(destination);
+    .pipe(source('chessground-examples.js'))
+    .pipe(destination());
 
   const bundler = watchify(
     browserify(Object.assign({}, watchify.args, browserifyOpts(true)))
