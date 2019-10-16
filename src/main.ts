@@ -11,6 +11,8 @@ export function run(element: Element) {
 
   const patch = init([klass, attributes, listeners]);
 
+  const lastZoom = parseFloat(localStorage.getItem('lichess-dev.cge.zoom')!) || 100;
+
   let unit: Unit, cg: Api, vnode: VNode;
 
   function redraw() {
@@ -22,6 +24,7 @@ export function run(element: Element) {
     el.className = 'cg-wrap';
     cg = unit.run(el);
     window['cg'] = cg; // for messing up with it from the browser console
+    if (lastZoom !== 100) setZoom(lastZoom);
   }
 
   function setZoom(zoom: number) {
@@ -60,11 +63,13 @@ export function run(element: Element) {
           h('input', {
             attrs: {
               type: 'number',
-              value: 100
+              value: lastZoom
             },
             on: {
               change(e) {
-                setZoom(parseFloat((e.target as HTMLInputElement).value));
+                const zoom = parseFloat((e.target as HTMLInputElement).value)
+                localStorage.setItem('lichess-dev.cge.zoom', zoom.toString());
+                setZoom(zoom);
               }
             }
           }, 'Toggle orientation')
