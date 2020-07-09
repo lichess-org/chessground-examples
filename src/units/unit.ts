@@ -16,7 +16,7 @@ export interface Unit {
 }
 
 export const list: Unit[] = [
-  basics.defaults, basics.fromFen, basics.lastMoveCrazyhouse,
+  basics.defaults, basics.fromFen, basics.lastMoveCrazyhouse, basics.checkHighlight,
   play.initial, play.castling, play.vsRandom, play.fullRandom, play.slowAnim, play.conflictingHold,
   perf.move, perf.select,
   anim.conflictingAnim, anim.withSameRole, anim.notSameRole, anim.whileHolding,
