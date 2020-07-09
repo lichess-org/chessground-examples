@@ -20,7 +20,9 @@ export const conflictingAnim: Unit = {
       cg.set({
         turnColor: 'white',
         movable: {
-          dests: {e4: ['e5', 'd5', 'f5']}
+          dests: new Map([
+            ['e4', ['e5', 'd5', 'f5']]
+          ])
         }
       });
       cg.playPremove();
@@ -95,7 +97,9 @@ export const whileHolding: Unit = {
       cg.set({
         turnColor: 'white',
         movable: {
-          dests: {e4: ['e5', 'd5', 'f5']}
+          dests: new Map([
+            ['e4', ['e5', 'd5', 'f5']]
+          ])
         }
       });
       cg.playPremove();

@@ -126,7 +126,9 @@ export const conflictingHold: Unit = {
       movable: {
         color: 'white',
         free: false,
-        dests: {e5: ['f6']}
+        dests: new Map([
+          ['e5', ['f6']]
+        ])
       }
     });
     setTimeout(() => {

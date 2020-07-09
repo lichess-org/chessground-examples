@@ -26,9 +26,9 @@ export const select: Unit = {
     const cg = Chessground(cont, {
       movable: {
         free: false,
-        dests: {
-          e2: ['e3', 'e4', 'd3', 'f3']
-        }
+        dests: new Map([
+          ['e2', ['e3', 'e4', 'd3', 'f3']]
+        ])
       }
     });
     const delay = 500;

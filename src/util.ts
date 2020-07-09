@@ -1,15 +1,16 @@
 import { Api } from 'chessground/api';
+import { Color, Key } from 'chessground/types';
 
-export function toDests(chess: any) {
-  const dests = {};
+export function toDests(chess: any): Map<Key, Key[]> {
+  const dests = new Map();
   chess.SQUARES.forEach(s => {
     const ms = chess.moves({square: s, verbose: true});
-    if (ms.length) dests[s] = ms.map(m => m.to);
+    if (ms.length) dests.set(s, ms.map(m => m.to));
   });
   return dests;
 }
 
-export function toColor(chess: any) {
+export function toColor(chess: any): Color {
   return (chess.turn() === 'w') ? 'white' : 'black';
 
 }
