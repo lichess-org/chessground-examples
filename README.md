@@ -2,7 +2,7 @@ Usage examples for [lichess' chessground](https://github.com/ornicar/chessground
 
 ```
 yarn install
-gulp dev
+yarn exec gulp dev
 http-server (or any other local http server of your choice)
 ```
 
