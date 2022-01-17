@@ -1,15 +1,10 @@
-import { h, init } from 'snabbdom';
-import { VNode } from 'snabbdom/vnode';
+import { h, init, VNode, classModule, attributesModule, eventListenersModule } from 'snabbdom';
 import { Api } from 'chessground/api';
-import klass from 'snabbdom/modules/class';
-import attributes from 'snabbdom/modules/attributes';
-import listeners from 'snabbdom/modules/eventlisteners';
-import * as page from 'page'
-import { Unit, list } from './units/unit'
+import page from 'page';
+import { Unit, list } from './units/unit';
 
 export function run(element: Element) {
-
-  const patch = init([klass, attributes, listeners]);
+  const patch = init([classModule, attributesModule, eventListenersModule]);
 
   const lastZoom = parseFloat(localStorage.getItem('lichess-dev.cge.zoom')!) || 100;
 
@@ -30,7 +25,7 @@ export function run(element: Element) {
   function setZoom(zoom: number) {
     const el = document.querySelector('.cg-wrap') as HTMLElement;
     if (el) {
-      const px = `${zoom / 100 * 320}px`;
+      const px = `${(zoom / 100) * 320}px`;
       el.style.width = px;
       el.style.height = px;
       document.body.dispatchEvent(new Event('chessground.resize'));
@@ -39,42 +34,63 @@ export function run(element: Element) {
 
   function render() {
     return h('div#chessground-examples', [
-      h('menu', list.map((ex, id) => {
-        return h('a', {
-          class: {
-            active: unit.name === ex.name
-          },
-          on: { click: () => page(`/${id}`) }
-        }, ex.name);
-      })),
+      h(
+        'menu',
+        list.map((ex, id) => {
+          return h(
+            'a',
+            {
+              class: {
+                active: unit.name === ex.name,
+              },
+              on: { click: () => page(`/${id}`) },
+            },
+            ex.name
+          );
+        })
+      ),
       h('section.blue.merida', [
         h('div.cg-wrap', {
           hook: {
             insert: runUnit,
-            postpatch: runUnit
-          }
+            postpatch: runUnit,
+          },
         }),
-        h('p', unit.name)
+        h('p', unit.name),
       ]),
       h('control', [
-        h('button', { on: { click() { cg.toggleOrientation(); }}}, 'Toggle orientation'),
+        h(
+          'button',
+          {
+            on: {
+              click() {
+                cg.toggleOrientation();
+              },
+            },
+          },
+          'Toggle orientation'
+        ),
         h('label.zoom', [
           'Zoom',
-          h('input', {
-            attrs: {
-              type: 'number',
-              value: lastZoom
+          h(
+            'input',
+            {
+              attrs: {
+                type: 'number',
+                value: lastZoom,
+              },
+              on: {
+                change(e) {
+                  const zoom = parseFloat((e.target as HTMLInputElement).value);
+                  localStorage.setItem('lichess-dev.cge.zoom', zoom.toString());
+                  setZoom(zoom);
+                },
+              },
             },
-            on: {
-              change(e) {
-                const zoom = parseFloat((e.target as HTMLInputElement).value)
-                localStorage.setItem('lichess-dev.cge.zoom', zoom.toString());
-                setZoom(zoom);
-              }
-            }
-          }, 'Toggle orientation')
-        ])
-      ])
+            'Toggle orientation'
+          ),
+        ]),
+      ]),
     ]);
   }
 

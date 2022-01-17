@@ -1,25 +1,30 @@
 {
   "name": "chessground-examples",
-  "version": "6.0.1",
+  "version": "7.0.0",
   "description": "chessground examples",
   "main": "dist/chessground-examples.js",
   "author": "Thibault Duplessis",
   "license": "GPL-3.0",
   "dependencies": {
     "chess.js": "^0.10",
-    "chessground": "^7.11.0",
-    "page": "^1.7",
-    "snabbdom": "^0.7"
+    "chessground": "^8",
+    "page": "^1",
+    "snabbdom": "^3"
   },
   "devDependencies": {
-    "browserify": "^16",
-    "gulp": "^4",
-    "gulp-sourcemaps": "^2",
-    "gulp-terser": "^1",
-    "tsify": "^3",
-    "typescript": "^4",
-    "vinyl-buffer": "^1",
-    "vinyl-source-stream": "^2",
-    "watchify": "^3"
+    "@rollup/plugin-commonjs": "^19",
+    "@rollup/plugin-node-resolve": "^13",
+    "@rollup/plugin-typescript": "^8",
+    "@types/page": "^1.11.5",
+    "http-server": "^0.12",
+    "prettier": "^2",
+    "rollup": "^2",
+    "rollup-plugin-terser": "^7",
+    "tslib": "^2",
+    "typescript": "^4"
+  },
+  "scripts": {
+    "build": "rollup --config",
+    "serve": "http-server"
   }
 }
