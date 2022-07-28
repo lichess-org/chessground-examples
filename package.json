@@ -6,7 +6,7 @@
   "author": "Thibault Duplessis",
   "license": "GPL-3.0",
   "dependencies": {
-    "chess.js": "^0.10",
+    "chess.js": "^0.13.4",
     "chessground": "^8",
     "page": "^1",
     "snabbdom": "^3"
@@ -15,6 +15,7 @@
     "@rollup/plugin-commonjs": "^19",
     "@rollup/plugin-node-resolve": "^13",
     "@rollup/plugin-typescript": "^8",
+    "@types/chess.js": "^0.13.2",
     "@types/page": "^1.11.5",
     "http-server": "^0.12",
     "prettier": "^2",
