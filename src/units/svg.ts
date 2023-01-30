@@ -1,10 +1,19 @@
-import { Chessground }  from 'chessground';
+import { Chessground } from 'chessground';
 import { DrawShape } from 'chessground/draw';
 import { Unit } from './unit';
 
 export const presetUserShapes: Unit = {
   name: 'Preset user shapes',
-  run: el => Chessground(el, { drawable: { shapes: shapeSet1 } })
+  run: el => Chessground(el, { drawable: { shapes: shapeSet1 } }),
+};
+
+export const fenAndShapes: Unit = {
+  name: 'FEN and shapes',
+  run: el =>
+    Chessground(el, {
+      fen: '2r2rk1/4bp1p/pp2p1p1/4P3/4bP2/PqN1B2Q/1P3RPP/2R3K1 w - - 1 23',
+      drawable: { shapes: shapeSet1 },
+    }),
 };
 
 export const changingShapesHigh: Unit = {
@@ -21,7 +30,7 @@ export const changingShapesHigh: Unit = {
     }
     setTimeout(run, delay);
     return cg;
-  }
+  },
 };
 
 export const changingShapesLow: Unit = {
@@ -38,20 +47,24 @@ export const changingShapesLow: Unit = {
     }
     setTimeout(run, delay);
     return cg;
-  }
+  },
 };
 
 export const brushModifiers: Unit = {
   name: 'Brush modifiers',
   run(el) {
     function sets() {
-      return [shapeSet1, shapeSet1b, shapeSet1c].map(set => set.map(shape => {
-        shape.modifiers = Math.round(Math.random()) ? undefined : {
-          lineWidth: 2 + Math.round(Math.random() * 3) * 4
-        };
-        return shape;
-      }));
-    };
+      return [shapeSet1, shapeSet1b, shapeSet1c].map(set =>
+        set.map(shape => {
+          shape.modifiers = Math.round(Math.random())
+            ? undefined
+            : {
+                lineWidth: 2 + Math.round(Math.random() * 3) * 4,
+              };
+          return shape;
+        })
+      );
+    }
     const cg = Chessground(el, { drawable: { shapes: sets()[0] } });
     const delay = 1000;
     let i = 0;
@@ -62,20 +75,24 @@ export const brushModifiers: Unit = {
     }
     setTimeout(run, delay);
     return cg;
-  }
+  },
 };
 
 export const autoShapes: Unit = {
   name: 'Autoshapes',
   run(el) {
     function sets() {
-      return [shapeSet1, shapeSet1b, shapeSet1c].map(set => set.map(shape => {
-        shape.modifiers = Math.round(Math.random()) ? undefined : {
-          lineWidth: 2 + Math.round(Math.random() * 3) * 4
-        };
-        return shape;
-      }));
-    };
+      return [shapeSet1, shapeSet1b, shapeSet1c].map(set =>
+        set.map(shape => {
+          shape.modifiers = Math.round(Math.random())
+            ? undefined
+            : {
+                lineWidth: 2 + Math.round(Math.random() * 3) * 4,
+              };
+          return shape;
+        })
+      );
+    }
     const cg = Chessground(el);
     const delay = 1000;
     let i = 0;
@@ -86,27 +103,29 @@ export const autoShapes: Unit = {
     }
     setTimeout(run, delay);
     return cg;
-  }
+  },
 };
 
 export const visibleFalse: Unit = {
   name: 'Shapes not visible',
-  run: el => Chessground(el, {
-    drawable: {
-      visible: false,
-      shapes: shapeSet1
-    }
-  })
+  run: el =>
+    Chessground(el, {
+      drawable: {
+        visible: false,
+        shapes: shapeSet1,
+      },
+    }),
 };
 
 export const enabledFalse: Unit = {
   name: 'Shapes not enabled, but visible',
-  run: el => Chessground(el, {
-    drawable: {
-      enabled: false,
-      shapes: shapeSet1
-    }
-  })
+  run: el =>
+    Chessground(el, {
+      drawable: {
+        enabled: false,
+        shapes: shapeSet1,
+      },
+    }),
 };
 
 export const customSvg: Unit = {
@@ -114,7 +133,7 @@ export const customSvg: Unit = {
   run(el) {
     const cg = Chessground(el, { animation: { duration: 300 } });
 
-    const sleep = (msec) => new Promise(resolve => setTimeout(resolve, msec));
+    const sleep = msec => new Promise(resolve => setTimeout(resolve, msec));
 
     const loop = async () => {
       if (!cg.state.dom.elements.board.offsetParent) return;
@@ -124,15 +143,15 @@ export const customSvg: Unit = {
       await sleep(1000);
 
       cg.move('e2', 'e4');
-      cg.setAutoShapes([{ orig: 'e4', customSvg: glyphToSvg['??'] }]);
+      cg.setAutoShapes([{ orig: 'e4', brush: 'green', customSvg: glyphToSvg['??'] }]);
       await sleep(1000);
 
       cg.move('e7', 'e5');
-      cg.setAutoShapes([{ orig: 'e5', customSvg: glyphToSvg['?!'] }]);
+      cg.setAutoShapes([{ orig: 'e5', brush: 'green', customSvg: glyphToSvg['?!'] }]);
       await sleep(1000);
 
       cg.move('d1', 'e2');
-      cg.setAutoShapes([{ orig: 'e2', customSvg: glyphToSvg['?'] }]);
+      cg.setAutoShapes([{ orig: 'e2', brush: 'green', customSvg: glyphToSvg['?'] }]);
       await sleep(1000);
 
       setTimeout(loop);
@@ -140,7 +159,7 @@ export const customSvg: Unit = {
     loop();
 
     return cg;
-  }
+  },
 };
 
 const shapeSet1: DrawShape[] = [
@@ -151,15 +170,23 @@ const shapeSet1: DrawShape[] = [
   { orig: 'e2', dest: 'e4', brush: 'green' },
   { orig: 'a6', dest: 'c8', brush: 'blue' },
   { orig: 'f8', dest: 'f4', brush: 'yellow' },
-  { orig: 'h5', brush: 'green', piece: {
-    color: 'white',
-    role: 'knight'
-  }},
-  { orig: 'h6', brush: 'red', piece: {
-    color: 'black',
-    role: 'queen',
-    scale: 0.6
-  }}
+  {
+    orig: 'h5',
+    brush: 'green',
+    piece: {
+      color: 'white',
+      role: 'knight',
+    },
+  },
+  {
+    orig: 'h6',
+    brush: 'red',
+    piece: {
+      color: 'black',
+      role: 'queen',
+      scale: 0.6,
+    },
+  },
 ];
 
 const shapeSet2: DrawShape[] = [
@@ -170,15 +197,17 @@ const shapeSet2: DrawShape[] = [
   { orig: 'h6', dest: 'h8', brush: 'blue' },
   { orig: 'b3', dest: 'd6', brush: 'red' },
   { orig: 'a1', dest: 'e1', brush: 'red' },
-  { orig: 'f5', brush: 'green', piece: {
-    color: 'black',
-    role: 'bishop'
-  }}
+  {
+    orig: 'f5',
+    brush: 'green',
+    piece: {
+      color: 'black',
+      role: 'bishop',
+    },
+  },
 ];
 
-const shapeSet3: DrawShape[] = [
-  { orig: 'e5', brush: 'blue' }
-];
+const shapeSet3: DrawShape[] = [{ orig: 'e5', brush: 'blue' }];
 
 const shapeSet1b: DrawShape[] = [
   { orig: 'a3', brush: 'green' },
@@ -187,15 +216,23 @@ const shapeSet1b: DrawShape[] = [
   { orig: 'e2', dest: 'e4', brush: 'green' },
   { orig: 'a6', dest: 'c8', brush: 'blue' },
   { orig: 'f8', dest: 'f4', brush: 'yellow' },
-  { orig: 'h5', brush: 'green', piece: {
-    color: 'white',
-    role: 'knight'
-  }},
-  { orig: 'h6', brush: 'red', piece: {
-    color: 'black',
-    role: 'queen',
-    scale: 0.6
-  }}
+  {
+    orig: 'h5',
+    brush: 'green',
+    piece: {
+      color: 'white',
+      role: 'knight',
+    },
+  },
+  {
+    orig: 'h6',
+    brush: 'red',
+    piece: {
+      color: 'black',
+      role: 'queen',
+      scale: 0.6,
+    },
+  },
 ];
 
 const shapeSet1c: DrawShape[] = [
@@ -206,15 +243,23 @@ const shapeSet1c: DrawShape[] = [
   { orig: 'a6', dest: 'c8', brush: 'blue' },
   { orig: 'b6', dest: 'd8', brush: 'blue' },
   { orig: 'f8', dest: 'f4', brush: 'yellow' },
-  { orig: 'h5', brush: 'green', piece: {
-    color: 'white',
-    role: 'knight'
-  }},
-  { orig: 'h6', brush: 'red', piece: {
-    color: 'black',
-    role: 'queen',
-    scale: 0.6
-  }}
+  {
+    orig: 'h5',
+    brush: 'green',
+    piece: {
+      color: 'white',
+      role: 'knight',
+    },
+  },
+  {
+    orig: 'h6',
+    brush: 'red',
+    piece: {
+      color: 'black',
+      role: 'queen',
+      scale: 0.6,
+    },
+  },
 ];
 
 const glyphToSvg = {

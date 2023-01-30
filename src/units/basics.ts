@@ -1,21 +1,21 @@
-import { Chessground }  from 'chessground';
+import { Chessground } from 'chessground';
 import { Unit } from './unit';
 
 export const defaults: Unit = {
   name: 'Default configuration',
   run(el) {
     return Chessground(el);
-  }
+  },
 };
 
 export const fromFen: Unit = {
   name: 'From FEN, from black POV',
   run(el) {
     return Chessground(el, {
-      fen:'2r3k1/pp2Qpbp/4b1p1/3p4/3n1PP1/2N4P/Pq6/R2K1B1R w -',
-      orientation: 'black'
+      fen: '2r3k1/pp2Qpbp/4b1p1/3p4/3n1PP1/2N4P/Pq6/R2K1B1R w -',
+      orientation: 'black',
     });
-  }
+  },
 };
 
 export const lastMoveCrazyhouse: Unit = {
@@ -23,12 +23,12 @@ export const lastMoveCrazyhouse: Unit = {
   run(el) {
     const cg = Chessground(el);
     setTimeout(() => {
-      cg.set({lastMove:['e2', 'e4']});
-      setTimeout(() => cg.set({lastMove:['g6']}), 1000);
-      setTimeout(() => cg.set({lastMove:['e1']}), 2000);
+      cg.set({ lastMove: ['e2', 'e4'] });
+      setTimeout(() => cg.set({ lastMove: ['g6'] }), 1000);
+      setTimeout(() => cg.set({ lastMove: ['e1'] }), 2000);
     });
     return cg;
-  }
+  },
 };
 
 export const checkHighlight: Unit = {
@@ -39,12 +39,54 @@ export const checkHighlight: Unit = {
       fen: fen,
       turnColor: 'black',
       highlight: {
-        check: true
-      }
+        check: true,
+      },
     });
     cg.set({
-      check: true
+      check: true,
     });
     return cg;
-  }
+  },
+};
+
+export const unselectable: Unit = {
+  name: 'Unselectable, undraggable pieces',
+  run(el) {
+    return Chessground(el, {
+      selectable: {
+        enabled: false,
+      },
+      draggable: {
+        enabled: false,
+      },
+    });
+  },
+};
+
+export const unselectableDraggable: Unit = {
+  name: 'Unselectable but undraggable pieces',
+  run(el) {
+    return Chessground(el, {
+      selectable: {
+        enabled: false,
+      },
+      draggable: {
+        enabled: true,
+      },
+    });
+  },
+};
+
+export const selectableUndraggable: Unit = {
+  name: 'Selectable but undraggable pieces',
+  run(el) {
+    return Chessground(el, {
+      selectable: {
+        enabled: true,
+      },
+      draggable: {
+        enabled: false,
+      },
+    });
+  },
 };
