@@ -1,4 +1,4 @@
-Usage examples for [lichess' chessground](https://github.com/ornicar/chessground).
+Usage examples for [lichess' chessground](https://github.com/lichess-org/chessground).
 
 ```
 npm install
