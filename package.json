@@ -1,5 +1,6 @@
 {
   "name": "chessground-examples",
+  "private": true,
   "version": "7.0.0",
   "description": "chessground examples",
   "main": "dist/chessground-examples.js",
