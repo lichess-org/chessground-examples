@@ -64,7 +64,7 @@ export const unselectable: Unit = {
 };
 
 export const unselectableDraggable: Unit = {
-  name: 'Unselectable but undraggable pieces',
+  name: 'Unselectable but draggable pieces',
   run(el) {
     return Chessground(el, {
       selectable: {
