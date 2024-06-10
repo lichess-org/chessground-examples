@@ -2,7 +2,7 @@
   width: 512px;
   height: 464.5px;
 }
-.in3d .cg-board::before {
+.in3d cg-board::before {
   position: absolute;
   top: -0.730688%;
   left: 0;
@@ -29,7 +29,7 @@
   left: -1.85%;
   top: -9.1%;
 }
-.cg-board piece.dragging {
+cg-board piece.dragging {
   cursor: move;
   z-index: 70!important;
 }
