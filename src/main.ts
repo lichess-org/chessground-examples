@@ -23,13 +23,17 @@ export function run(element: Element) {
   }
 
   function setZoom(zoom: number) {
+    const width = zoom / 100 * 320;
     const el = document.querySelector('.cg-wrap') as HTMLElement;
     if (el) {
-      const px = `${(zoom / 100) * 320}px`;
-      el.style.width = px;
-      el.style.height = px;
-      document.body.dispatchEvent(new Event('chessground.resize'));
+      el.style.width = `${width}px`;
+      el.style.height = `${width}px`;
     }
+    const el3d = document.querySelector('.in3d .cg-wrap') as HTMLElement;
+    if (el3d) {
+      el3d.style.height = `${width * 464.5 / 512}px`;
+    }
+    document.body.dispatchEvent(new Event('chessground.resize'));
   }
 
   function render() {

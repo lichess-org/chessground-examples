@@ -1,6 +1,7 @@
 .in3d .cg-wrap {
-  width: 512px;
-  height: 464.5px;
+  width: 320px;
+  height: 290.3125px;
+  background-image: none;
 }
 .in3d cg-board::before {
   position: absolute;
