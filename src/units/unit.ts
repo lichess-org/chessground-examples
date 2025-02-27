@@ -1,14 +1,14 @@
-import { Api } from 'chessground/api';
+import { Api } from "chessground/api";
 
-import * as basics from './basics';
-import * as play from './play';
-import * as perf from './perf';
-import * as zh from './zh';
-import * as anim from './anim';
-import * as svg from './svg';
-import * as in3d from './in3d';
-import * as fen from './fen';
-import * as viewOnly from './viewOnly';
+import * as basics from "./basics";
+import * as play from "./play";
+import * as perf from "./perf";
+import * as zh from "./zh";
+import * as anim from "./anim";
+import * as svg from "./svg";
+import * as in3d from "./in3d";
+import * as fen from "./fen";
+import * as viewOnly from "./viewOnly";
 
 export interface Unit {
   name: string;
@@ -35,6 +35,7 @@ export const list: Unit[] = [
   anim.withSameRole,
   anim.notSameRole,
   anim.whileHolding,
+  anim.enPassant,
   zh.lastMoveDrop,
   svg.presetUserShapes,
   svg.fenAndShapes,
