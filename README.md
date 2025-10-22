@@ -2,8 +2,8 @@ Usage examples for [lichess' chessground](https://github.com/lichess-org/chessgr
 
 ```
 pnpm install
-pnpm run build (or npm run watch)
-pnpm run serve (or any other local http server of your choice)
+pnpm build (or pnpm watch)
+pnpm serve (or any other local http server of your choice)
 ```
 
 Then browse http://127.0.0.1:8080

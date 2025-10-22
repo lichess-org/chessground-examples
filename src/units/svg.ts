@@ -128,6 +128,16 @@ export const enabledFalse: Unit = {
     }),
 };
 
+export const eraseOnClickFalse: Unit = {
+  name: "drawable.eraseOnClick: false",
+  run: (el) =>
+    Chessground(el, {
+      drawable: {
+        eraseOnClick: false,
+      },
+    }),
+};
+
 export const customSvg: Unit = {
   name: "Custom SVG",
   run(el) {

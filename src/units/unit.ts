@@ -45,6 +45,7 @@ export const list: Unit[] = [
   svg.autoShapes,
   svg.visibleFalse,
   svg.enabledFalse,
+  svg.eraseOnClickFalse,
   svg.customSvg,
   in3d.defaults,
   in3d.vsRandom,
