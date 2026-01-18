@@ -133,7 +133,7 @@ export const eraseOnClickFalse: Unit = {
   run: (el) =>
     Chessground(el, {
       drawable: {
-        eraseOnClick: false,
+        eraseOnMovablePieceClick: false,
       },
     }),
 };
