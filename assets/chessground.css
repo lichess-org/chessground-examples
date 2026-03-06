@@ -95,6 +95,12 @@ cg-board square.move-dest:hover {
 cg-board square.premove-dest:hover {
   background: rgba(20, 30, 85, 0.2);
 }
+cg-board square.move-dest.hover {
+  background: red;
+}
+cg-board square.premove-dest.hover {
+  background: red;
+}
 
 cg-board square.last-move {
   will-change: transform;
@@ -143,10 +149,6 @@ cg-board piece.anim {
 cg-board piece.fading {
   z-index: 1;
   opacity: 0.5;
-}
-
-.cg-wrap square.move-dest:hover {
-  background-color: rgba(20, 85, 30, 0.3);
 }
 
 .cg-wrap piece.ghost {

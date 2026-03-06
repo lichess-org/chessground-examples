@@ -143,3 +143,22 @@ export const conflictingHold: Unit = {
     return cg;
   },
 };
+
+export const jsHover: Unit = {
+  name: "JS hover for safari",
+  run(el) {
+    const chess = new Chess();
+    const cg = Chessground(el, {
+      movable: {
+        color: "white",
+        free: false,
+        dests: toDests(chess),
+      },
+      jsHover: true,
+    });
+    cg.set({
+      movable: { events: { after: playOtherSide(cg, chess) } },
+    });
+    return cg;
+  },
+};

@@ -29,6 +29,7 @@ export const list: Unit[] = [
   play.fullRandom,
   play.slowAnim,
   play.conflictingHold,
+  play.jsHover,
   perf.move,
   perf.select,
   anim.conflictingAnim,
