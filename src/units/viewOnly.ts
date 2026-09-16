@@ -1,5 +1,5 @@
 import { Chess } from "chess.js";
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 import { Unit } from "./unit";
 
 export const fullRandom: Unit = {

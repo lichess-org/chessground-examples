@@ -1,4 +1,4 @@
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 import { Unit } from "./unit";
 
 export const conflictingAnim: Unit = {

@@ -1,5 +1,5 @@
 import { Unit } from "./unit";
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 
 export const metaSquares: Unit = {
   name: "Perf: meta squares",

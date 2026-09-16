@@ -1,5 +1,5 @@
 import { Chess } from "chess.js";
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 import { Unit } from "./unit";
 import { toColor, toDests, aiPlay, playOtherSide } from "../util";
 
@@ -27,8 +27,7 @@ export const initial: Unit = {
 export const castling: Unit = {
   name: "Castling",
   run(el) {
-    const fen =
-      "rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4";
+    const fen = "rnbqk2r/pppp1ppp/5n2/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R w KQkq - 4 4";
     const chess = new Chess(fen);
     const cg = Chessground(el, {
       fen: fen,

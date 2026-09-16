@@ -1,4 +1,4 @@
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 import { DrawShape } from "chessground/draw";
 import { Unit } from "./unit";
 

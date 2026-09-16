@@ -1,4 +1,4 @@
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 import { Chess } from "chess.js";
 import { Unit } from "./unit";
 import { toDests, aiPlay } from "../util";

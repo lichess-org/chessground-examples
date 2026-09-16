@@ -1,5 +1,5 @@
 import { Unit } from "./unit";
-import { Chessground } from "chessground";
+import { Chessground } from "@lichess-org/chessground";
 import { Key } from "chessground/types.d";
 
 export const lastMoveDrop: Unit = {
