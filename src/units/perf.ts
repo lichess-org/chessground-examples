@@ -1,6 +1,22 @@
 import { Unit } from "./unit";
 import { Chessground } from "chessground";
 
+export const metaSquares: Unit = {
+  name: "Perf: meta squares",
+  run(cont) {
+    const cg = Chessground(cont, {
+      fen: "k7/8/8/8/8/4K3/4P3/8 w - - 0 1",
+      movable: {
+        free: false,
+        dests: new Map([
+          ["a8", ["b8", "a7", "b7"]],
+          ["e3", ["f2", "f3", "f4", "e4", "d2", "d3", "d4"]],
+        ]),
+      },
+    });
+    return cg;
+  },
+};
 export const move: Unit = {
   name: "Perf: piece move",
   run(cont) {

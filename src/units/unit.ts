@@ -30,6 +30,7 @@ export const list: Unit[] = [
   play.slowAnim,
   play.conflictingHold,
   play.jsHover,
+  perf.metaSquares,
   perf.move,
   perf.select,
   anim.conflictingAnim,
