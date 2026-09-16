@@ -1,6 +1,6 @@
 import { Unit } from "./unit";
 import { Chessground } from "@lichess-org/chessground";
-import { Key } from "chessground/types.d";
+import { Key } from "@lichess-org/chessground/types.d";
 
 export const autoSwitch: Unit = {
   name: "FEN: switch (puzzle bug)",

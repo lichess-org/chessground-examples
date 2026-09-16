@@ -1,4 +1,4 @@
-import { Api } from "chessground/api";
+import { Api } from "@lichess-org/chessground/api";
 
 import * as basics from "./basics";
 import * as play from "./play";

@@ -1,5 +1,5 @@
 import { Chessground } from "@lichess-org/chessground";
-import { DrawShape } from "chessground/draw";
+import { DrawShape } from "@lichess-org/chessground/draw";
 import { Unit } from "./unit";
 
 export const presetUserShapes: Unit = {
