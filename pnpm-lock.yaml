@@ -110,8 +110,8 @@ importers:
   .:
     dependencies:
       '@lichess-org/chessground':
-        specifier: ^10.1.1
-        version: 10.1.1
+        specifier: file:~/chessground
+        version: file:../chessground
       chess.js:
         specifier: ^0.13.4
         version: 0.13.4
@@ -155,8 +155,9 @@ importers:
 
 packages:
 
-  '@lichess-org/chessground@10.1.1':
-    resolution: {integrity: sha512-IBEs8+J64/zE8QB4NXxsvpjm/tHRjfQAdWwUh4xzqqN+RValgthWHemLnxsmtHFwuxvO4lHd+crp1ecgZxKVoQ==}
+  '@lichess-org/chessground@file:../chessground':
+    resolution: {directory: ../chessground, type: directory}
+    engines: {node: '>=24', pnpm: '>=12'}
 
   '@rollup/plugin-commonjs@19.0.2':
     resolution: {integrity: sha512-gBjarfqlC7qs0AutpRW/hrFNm+cd2/QKxhwyFa+srbg1oX7rDsEU3l+W7LAUhsAp9mPJMAkXDhLbQaVwEaE8bA==}
@@ -519,7 +520,7 @@ packages:
 
 snapshots:
 
-  '@lichess-org/chessground@10.1.1': {}
+  '@lichess-org/chessground@file:../chessground': {}
 
   '@rollup/plugin-commonjs@19.0.2(rollup@3.30.0)':
     dependencies:

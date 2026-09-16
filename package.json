@@ -14,7 +14,7 @@
     "check-format": "prettier --check ."
   },
   "dependencies": {
-    "@lichess-org/chessground": "^10.1.1",
+    "@lichess-org/chessground": "file:~/chessground",
     "chess.js": "^0.13.4",
     "page": "^1",
     "snabbdom": "3.5.1"
@@ -35,5 +35,6 @@
     "node": ">=24",
     "pnpm": ">=12"
   },
-  "packageManager": "pnpm@12.3.4"
+  "packageManager": "pnpm@12.3.4",
+  "//": "for local testing, use @lichess-org/chessground: file:~/chessground"
 }
