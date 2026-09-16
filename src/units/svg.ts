@@ -155,21 +155,15 @@ export const customSvg: Unit = {
       await sleep(1000);
 
       cg.move("e2", "e4");
-      cg.setAutoShapes([
-        { orig: "e4", brush: "green", customSvg: glyphToSvg["??"] },
-      ]);
+      cg.setAutoShapes([{ orig: "e4", brush: "green", customSvg: glyphToSvg["??"] }]);
       await sleep(1000);
 
       cg.move("e7", "e5");
-      cg.setAutoShapes([
-        { orig: "e5", brush: "green", customSvg: glyphToSvg["?!"] },
-      ]);
+      cg.setAutoShapes([{ orig: "e5", brush: "green", customSvg: glyphToSvg["?!"] }]);
       await sleep(1000);
 
       cg.move("d1", "e2");
-      cg.setAutoShapes([
-        { orig: "e2", brush: "green", customSvg: glyphToSvg["?"] },
-      ]);
+      cg.setAutoShapes([{ orig: "e2", brush: "green", customSvg: glyphToSvg["?"] }]);
       await sleep(1000);
 
       setTimeout(loop);
@@ -188,6 +182,7 @@ const shapeSet1: DrawShape[] = [
   { orig: "e2", dest: "e4", brush: "green" },
   { orig: "a6", dest: "c8", brush: "blue" },
   { orig: "f8", dest: "f4", brush: "yellow" },
+  { orig: "f2", dest: "f4", brush: "paleRed", modifiers: { hilite: "#3291ff" } },
   {
     orig: "h5",
     brush: "green",
@@ -205,6 +200,10 @@ const shapeSet1: DrawShape[] = [
       scale: 0.6,
     },
   },
+  { orig: "c5", brush: "paleRed", modifiers: { hilite: "#3291ff" } },
+  { orig: "c6", brush: "paleRed", modifiers: { hilite: "#3291ff" } },
+  { orig: "d6", brush: "paleGreen", modifiers: { hilite: "#aaa" } },
+  { orig: "d5", brush: "paleGreen", modifiers: { hilite: "#aaa" } },
 ];
 
 const shapeSet2: DrawShape[] = [
